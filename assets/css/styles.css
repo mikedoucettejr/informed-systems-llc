@@ -1,0 +1,117 @@
+/* Informed Systems LLC - base styles */
+:root {
+  --brand: #0f766e; /* teal-700 */
+  --brand-dark: #0b504b;
+  --accent: #14b8a6; /* teal-500 */
+  --text: #0f172a; /* slate-900 */
+  --muted: #334155; /* slate-700 */
+  --bg: #f8fafc; /* slate-50 */
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 1rem; }
+
+/* Header */
+header {
+  background: var(--card);
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text);
+}
+.brand-logo {
+  width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, var(--brand), var(--accent));
+}
+.brand-name { font-weight: 700; letter-spacing: 0.2px; }
+
+.nav-links { display: flex; gap: 1rem; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+}
+.nav-links a:hover { background: #f1f5f9; color: var(--text); }
+
+/* Hero */
+.hero { padding: 4rem 0 3rem; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+}
+.badge {
+  display: inline-block;
+  background: rgba(20,184,166,0.1);
+  color: var(--brand);
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+.hero h1 { font-size: 2.5rem; line-height: 1.2; margin: 0.75rem 0 0.5rem; }
+.hero p { color: var(--muted); font-size: 1.1rem; margin: 0.5rem 0 1rem; }
+.cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-primary { background: var(--brand); color: white; }
+.btn-primary:hover { background: var(--brand-dark); }
+.btn-ghost { background: #e2e8f0; color: var(--text); }
+.btn-ghost:hover { background: #cbd5e1; }
+
+.card {
+  background: var(--card);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+/* Sections */
+section { padding: 2.5rem 0; }
+.section-title { font-size: 1.6rem; margin: 0 0 0.5rem 0; }
+.section-subtitle { color: var(--muted); margin-top: 0; }
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Footer */
+footer { border-top: 1px solid #e2e8f0; padding: 2rem 0; color: var(--muted); }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+}
+
+
